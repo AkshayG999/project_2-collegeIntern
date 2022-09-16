@@ -12,7 +12,7 @@ const createCollege = async function (req, res) {
         let dataLen = Object.keys(data).length
         if (dataLen == 0) return res.status(400).send({ status: false, msg: "Enter College Details" })
 
-        if (!name) return res.status(400).send({ status: false, msg: "Enter Name,This Is Required" })
+        if (!valid.isValid(name)) return res.status(400).send({ status: false, msg: "Enter Name,This Is Required" })
         if (!(/^[a-z A-Z]+$/).test(name))
             return res.status(400).send({ status: false, message: "Name should be in Alphabet format" });
 

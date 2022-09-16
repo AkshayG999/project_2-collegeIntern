@@ -1,8 +1,7 @@
 const express = require('express');
 var bodyParser = require('body-parser');
-
 const route = require('./router/route');
-const { default: mongoose } = require('mongoose');
+const  mongoose  = require('mongoose');
 
 const app = express();
 
@@ -14,8 +13,6 @@ mongoose.connect("mongodb+srv://collegeIntern:MqEho0aLhPlho2em@cluster0.9xvqylt.
 }
 ).then( () => {console.log( "MongoDB is connected")}  )
 .catch( err => console.log(err))
-
-
 
 
 app.use('/', route);
