@@ -5,6 +5,7 @@ const valid = require('../controllers/internController')
 //________________________College Create__________________________________________________________________________________________________________________
 
 const createCollege = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.body
         let { name, fullName, logoLink } = data
@@ -37,6 +38,7 @@ const createCollege = async function (req, res) {
 //___________________________Get College Details_____________________________________________________________________________________________________________
 
 const getCollegeDetails = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.query
         let dataLen = Object.keys(data).length
