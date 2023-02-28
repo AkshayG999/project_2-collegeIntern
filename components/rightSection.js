@@ -321,7 +321,7 @@ export default function RightSection({
 
             <Spacer height={'2rem'} />
 
-            <small className={`${leftSectionStyles.copyrightText} ${sectionStyles.copyrightText}`}>Powered by <span style={{color:'#FF2231'}}>FunctionUp</span></small>
+            <small className={`${leftSectionStyles.copyrightText} ${sectionStyles.copyrightText}`}>Powered by <span style={{color:'#FF2231'}}>Akshay Gaikwad</span></small>
             
             <Spacer height={'2rem'} />
 

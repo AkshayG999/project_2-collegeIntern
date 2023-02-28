@@ -41,7 +41,7 @@ export default function LeftSection({
 
             <Spacer height={'.5rem'} />
             
-            <small className={`${sectionStyles.copyrightText} ${sectionStyles.hideCopyRightText}`}>Powered by <span style={{color:'#FF2231'}}>FunctionUp</span></small>
+            <small className={`${sectionStyles.copyrightText} ${sectionStyles.hideCopyRightText}`}>Powered by <span style={{color:'#FF2231'}}>Akshay Gaikwad</span></small>
         </section>
     )
 }

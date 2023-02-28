@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className={`${styles.full} ${styles.container}`}>
       <Head>
-        <title>Function Up Intern</title>
+        <title>Software Intern</title>
         <meta name="description" content="Intern Form" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
