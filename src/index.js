@@ -8,6 +8,9 @@ require('dotenv').config()
 const port = process.env.PORT || 3001
 const app = express();
 
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://client.d2jng35b0yh18v.amplifyapp.com']
+}))
 app.use(bodyParser.json());
 app.use(multer().any())
 
