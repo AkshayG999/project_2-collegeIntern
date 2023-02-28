@@ -5,12 +5,13 @@ const valid = require('../controllers/internController')
 //________________________College Create__________________________________________________________________________________________________________________
 
 const createCollege = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin','*')
     try {
+        res.setHeader('Access-Control-Allow-Origin','*')
+
         let data = req.body
         let { name, fullName, logoLink } = data
 
-        let dataLen = Object.keys(data).length
+        let dataLen = Object.keys(data).length  //[ keys ] 
         if (dataLen == 0) return res.status(400).send({ status: false, msg: "Enter College Details" })
 
         if (!valid.isValid(name)) return res.status(400).send({ status: false, msg: "Enter Name,This Is Required" })
@@ -27,19 +28,20 @@ const createCollege = async function (req, res) {
             return res.status(400).send({ status: false, message: "Enter Valid  LogoLink" })
 
         let saveData = await collegeModel.create(data)
-        res.status(201).send({ status: true, data: saveData })
+       return  res.status(201).send({ status: true, data: saveData })
 
     }
     catch (err) {
-        res.status(500).send({ status: false, msg: err.message })
+       return  res.status(500).send({ status: false, msg: err.message })
     }
 }
 
 //___________________________Get College Details_____________________________________________________________________________________________________________
 
 const getCollegeDetails = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin','*')
     try {
+        res.setHeader('Access-Control-Allow-Origin','*')
+        
         let data = req.query
         let dataLen = Object.keys(data).length
         if (dataLen == 0) return res.status(400).send({ status: false, msg: "Enter Data " })
@@ -58,16 +60,14 @@ const getCollegeDetails = async function (req, res) {
         if (!internStudents) return res.status(404).send({ status: false, msg: "No such Interns Are Their" })
 
         let collegeDetails = { name, fullName, logoLink, interns: internStudents }
-        console.log(collegeDetails)
+        // console.log(collegeDetails)
 
-        res.status(200).send({ status: true, data: collegeDetails })
+        return res.status(200).send({ status: true, data: collegeDetails })
     }
     catch (err) {
-        res.status(500).send({ status: false, msg: err.message })
+        return res.status(500).send({ status: false, msg: err.message })
     }
 
 }
-
-
 
 module.exports = { createCollege, getCollegeDetails }  
