@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "build": "tsc"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
